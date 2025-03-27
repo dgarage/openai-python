@@ -72,6 +72,8 @@ class Completions(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        # llama.cpp extension
+        grammar: str | None = None,
     ) -> Completion:
         """
         Creates a completion for the provided prompt and parameters.
@@ -227,6 +229,8 @@ class Completions(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        # llama.cpp extension
+        grammar: str | None = None,
     ) -> Stream[Completion]:
         """
         Creates a completion for the provided prompt and parameters.
@@ -382,6 +386,8 @@ class Completions(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        # llama.cpp extension
+        grammar: str | None = None,
     ) -> Completion | Stream[Completion]:
         """
         Creates a completion for the provided prompt and parameters.
@@ -537,6 +543,8 @@ class Completions(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        # llama.cpp extension
+        grammar: str | None = None,
     ) -> Completion | Stream[Completion]:
         return self._post(
             "/completions",
@@ -560,6 +568,7 @@ class Completions(SyncAPIResource):
                     "temperature": temperature,
                     "top_p": top_p,
                     "user": user,
+                    "grammar": grammar,
                 },
                 completion_create_params.CompletionCreateParamsStreaming
                 if stream
