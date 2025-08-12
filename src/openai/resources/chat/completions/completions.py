@@ -279,7 +279,7 @@ class Completions(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> ChatCompletion:
         """
         **Starting a new project?** We recommend trying
@@ -570,7 +570,7 @@ class Completions(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> Stream[ChatCompletionChunk]:
         """
         **Starting a new project?** We recommend trying
@@ -861,7 +861,7 @@ class Completions(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> ChatCompletion | Stream[ChatCompletionChunk]:
         """
         **Starting a new project?** We recommend trying
@@ -1152,7 +1152,7 @@ class Completions(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> ChatCompletion | Stream[ChatCompletionChunk]:
         validate_response_format(response_format)
         return self._post(
@@ -1727,7 +1727,7 @@ class AsyncCompletions(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> ChatCompletion:
         """
         **Starting a new project?** We recommend trying
@@ -2018,7 +2018,7 @@ class AsyncCompletions(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> AsyncStream[ChatCompletionChunk]:
         """
         **Starting a new project?** We recommend trying
@@ -2309,7 +2309,7 @@ class AsyncCompletions(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> ChatCompletion | AsyncStream[ChatCompletionChunk]:
         """
         **Starting a new project?** We recommend trying
@@ -2600,7 +2600,7 @@ class AsyncCompletions(AsyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> ChatCompletion | AsyncStream[ChatCompletionChunk]:
         validate_response_format(response_format)
         return await self._post(

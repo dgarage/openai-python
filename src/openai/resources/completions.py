@@ -73,7 +73,7 @@ class Completions(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> Completion:
         """
         Creates a completion for the provided prompt and parameters.
@@ -230,7 +230,7 @@ class Completions(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> Stream[Completion]:
         """
         Creates a completion for the provided prompt and parameters.
@@ -387,7 +387,7 @@ class Completions(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> Completion | Stream[Completion]:
         """
         Creates a completion for the provided prompt and parameters.
@@ -544,7 +544,7 @@ class Completions(SyncAPIResource):
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
         # llama.cpp extension
-        grammar: str | None = None,
+        grammar: str | NotGiven = NOT_GIVEN,
     ) -> Completion | Stream[Completion]:
         return self._post(
             "/completions",
